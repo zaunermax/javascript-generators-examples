@@ -1,4 +1,5 @@
-import type { Post, User } from './api.types.ts';
+import type { Post, User } from './types/api.types.ts';
+import { getPostsByUserId, getUsers } from './util/api.ts';
 
 type GeneratorFunction = (...args: unknown[]) => Generator<Promise<unknown>>;
 
@@ -11,18 +12,6 @@ function generatorInitiator<T extends GeneratorFunction>(generatorFn: T) {
 	}
 
 	return executor();
-}
-
-function getUsers(): Promise<User[]> {
-	return fetch('https://jsonplaceholder.typicode.com/users').then((res) =>
-		res.json(),
-	);
-}
-
-function getPostsByUserId(id: number): Promise<Post[]> {
-	return fetch('https://jsonplaceholder.typicode.com/posts?userId=' + id).then(
-		(res) => res.json(),
-	);
 }
 
 function* loadData() {
