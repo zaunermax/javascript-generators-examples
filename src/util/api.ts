@@ -11,3 +11,8 @@ export const getPostsByUserId = (id: number): Promise<Post[]> => {
 		(res) => res.json(),
 	);
 };
+
+export const sampleSdk = {
+	getUsers,
+	getPostsByUserId,
+}

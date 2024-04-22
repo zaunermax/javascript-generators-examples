@@ -1,5 +1,5 @@
-import type { Post, User } from './types/api.types.ts';
-import { getPostsByUserId, getUsers } from './util/api.ts';
+import type { Post, User } from '../types/api.types.ts';
+import { getPostsByUserId, getUsers } from '../util/api.ts';
 
 async function fetchData() {
 	const users: User[] = await getUsers();
