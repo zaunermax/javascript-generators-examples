@@ -1,16 +1,21 @@
 import { createReadStream } from 'fs';
 import { resolve } from 'path';
 import { createInterface } from 'readline';
+import { from } from 'rxjs';
+
+const getFileReader = (filePath: string) => {
+	const stream = createReadStream(filePath);
+	return createInterface({
+		input: stream,
+		crlfDelay: Infinity,
+	});
+};
 
 async function* processLines(
 	filePath: string,
 	maxLinesAtOnce: number,
-): AsyncGenerator<string[], void, unknown> {
-	const stream = createReadStream(filePath);
-	const reader = createInterface({
-		input: stream,
-		crlfDelay: Infinity,
-	});
+): AsyncGenerator<string[], void> {
+	const reader = getFileReader(filePath);
 
 	let lineBuffer: string[] = [];
 
@@ -27,25 +32,18 @@ async function* processLines(
 	}
 }
 
-async function handleFileLines(
-	filePath: string,
-	maxLinesAtOnce: number,
-): Promise<void> {
-	const lineGenerator = processLines(filePath, maxLinesAtOnce);
-
-	for await (const lines of lineGenerator) {
-		console.log(`Processing ${lines.length} lines:`);
-		lines.forEach((line) => console.log(line));
-	}
-}
-
 const filePath = resolve(__dirname, 'EXAMPLE.log');
 const maxLinesAtOnce = 10;
 
-handleFileLines(filePath, maxLinesAtOnce)
-	.then(() => {
-		console.log('File processing completed.');
-	})
-	.catch((err) => {
-		console.error('Error processing file:', err);
-	});
+const lineGenerator = processLines(filePath, maxLinesAtOnce);
+
+// do it the "vanilla way"
+for await (const lines of lineGenerator) {
+	console.log(`Processing ${lines.length} lines:`);
+	lines.forEach((line) => console.log(line));
+}
+
+// or use 3rd party libs to handle your async gens
+const line$ = from(processLines(filePath, maxLinesAtOnce));
+
+line$.subscribe((lines) => console.log(lines));
