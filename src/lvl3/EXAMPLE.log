@@ -1,0 +1,77 @@
+2024-04-22 08:23:45 INFO Server startup initiated
+2024-04-22 08:23:47 INFO Listening on port 8080
+2024-04-22 08:23:52 DEBUG Process environment ready
+2024-04-22 08:24:10 INFO Received connection from 192.168.1.25
+2024-04-22 08:24:10 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:24:11 INFO GET / HTTP/1.1 200 OK
+2024-04-22 08:24:15 INFO Received connection from 192.168.1.27
+2024-04-22 08:24:15 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:24:16 INFO GET /about HTTP/1.1 200 OK
+2024-04-22 08:24:20 INFO Received connection from 192.168.1.25
+2024-04-22 08:24:20 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:24:21 INFO GET /contact HTTP/1.1 404 Not Found
+2024-04-22 08:24:22 ERROR /contact resource not found
+2024-04-22 08:24:25 INFO Received connection from 192.168.1.30
+2024-04-22 08:24:25 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:24:26 INFO GET /login HTTP/1.1 200 OK
+2024-04-22 08:24:30 INFO Received connection from 192.168.1.27
+2024-04-22 08:24:30 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:24:31 WARNING POST /login retrying authentication
+2024-04-22 08:24:35 INFO POST /login HTTP/1.1 401 Unauthorized
+2024-04-22 08:24:36 ERROR Login failed for user admin
+2024-04-22 08:24:40 INFO Received connection from 192.168.1.33
+2024-04-22 08:24:40 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:24:41 INFO GET /api/data HTTP/1.1 200 OK
+2024-04-22 08:24:45 DEBUG Data service queried successfully
+2024-04-22 08:24:50 INFO Received connection from 192.168.1.35
+2024-04-22 08:24:50 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:24:51 INFO GET /home HTTP/1.1 302 Redirect
+2024-04-22 08:24:55 INFO Redirect to /login
+2024-04-22 08:25:00 INFO Received connection from 192.168.1.25
+2024-04-22 08:25:00 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:25:01 INFO GET /dashboard HTTP/1.1 200 OK
+2024-04-22 08:25:05 DEBUG Dashboard content delivered
+2024-04-22 08:25:10 INFO Received connection from 192.168.1.27
+2024-04-22 08:25:10 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:25:11 INFO GET /settings HTTP/1.1 500 Internal Server Error
+2024-04-22 08:25:12 ERROR Error rendering settings page
+2024-04-22 08:25:15 INFO Received connection from 192.168.1.30
+2024-04-22 08:25:15 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:25:16 INFO GET / HTTP/1.1 200 OK
+2024-04-22 08:25:20 INFO Server health check OK
+2024-04-22 08:25:25 INFO Received connection from 192.168.1.27
+2024-04-22 08:25:25 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:25:26 INFO GET /profile HTTP/1.1 200 OK
+2024-04-22 08:25:30 DEBUG Profile page accessed
+2024-04-22 08:25:35 INFO Received connection from 192.168.1.35
+2024-04-22 08:25:35 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:25:36 INFO GET /settings HTTP/1.1 200 OK
+2024-04-22 08:25:40 DEBUG Settings page rendered
+2024-04-22 08:25:45 INFO Received connection from 192.168.1.25
+2024-04-22 08:25:45 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:25:46 INFO GET /help HTTP/1.1 200 OK
+2024-04-22 08:25:50 DEBUG Help section accessed
+2024-04-22 08:25:55 INFO Received connection from 192.168.1.27
+2024-04-22 08:25:55 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:25:56 INFO GET /search?q=example HTTP/1.1 200 OK
+2024-04-22 08:26:00 DEBUG Search results returned
+2024-04-22 08:26:05 INFO Received connection from 192.168.1.30
+2024-04-22 08:26:05 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:26:06 INFO GET /news HTTP/1.1 200 OK
+2024-04-22 08:26:10 DEBUG News page delivered
+2024-04-22 08:26:15 INFO Received connection from 192.168.1.35
+2024-04-22 08:26:15 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:26:16 INFO GET /news/world HTTP/1.1 200 OK
+2024-04-22 08:26:20 DEBUG World news section accessed
+2024-04-22 08:26:25 INFO Received connection from 192.168.1.25
+2024-04-22 08:26:25 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:26:26 INFO GET /news/politics HTTP/1.1 404 Not Found
+2024-04-22 08:26:27 ERROR /news/politics resource not found
+2024-04-22 08:26:30 INFO Received connection from 192.168.1.27
+2024-04-22 08:26:30 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:26:31 INFO GET /api/users HTTP/1.1 200 OK
+2024-04-22 08:26:35 DEBUG User data fetched successfully
+2024-04-22 08:26:40 INFO Received connection from 192.168.1.30
+2024-04-22 08:26:40 DEBUG Request headers: {'Host': 'example.com', 'Connection': 'keep-alive'}
+2024-04-22 08:26:41 INFO GET /api/users/{id} HTTP/1.1 200 OK
+2024-04-22 08:26:45 DEBUG Specific user data retrieved
