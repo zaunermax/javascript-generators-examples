@@ -1,6 +1,12 @@
 import type { Commit } from '../types/gh-api.types.ts';
 import { from } from 'rxjs';
 
+const getNextLink = (response: Response): string | null => {
+	const regexpRes = response.headers.get('Link')?.match(/<(.*?)>; rel="next"/);
+
+	return regexpRes?.[1] ?? null;
+};
+
 async function* fetchCommits(repo: string, maxPages: number) {
 	let url: string | null = `https://api.github.com/repos/${repo}/commits`;
 	let currCnt = 0;
@@ -14,11 +20,7 @@ async function* fetchCommits(repo: string, maxPages: number) {
 
 		if (response.status !== 200) throw new Error(response.statusText);
 
-		const regexpRes = response.headers
-			.get('Link')
-			?.match(/<(.*?)>; rel="next"/);
-
-		url = regexpRes?.[1] ?? null;
+		url = getNextLink(response);
 
 		for (const commit of body) {
 			yield commit;
@@ -29,7 +31,7 @@ async function* fetchCommits(repo: string, maxPages: number) {
 }
 
 // do it the "vanilla way"
-for await (const commit of fetchCommits('TanStack/query', 5)) {
+for await (const commit of fetchCommits('TanStack/query', 2)) {
 	console.log(commit.author.login); // name of committer
 }
 
