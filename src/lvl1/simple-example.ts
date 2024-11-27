@@ -38,9 +38,9 @@ for (const value of simpleGenerator()) {
 }
 
 // Type Demos
-type Demo001<T> = Iterable<T>
-type Demo002<T, TReturn, TNext> = Iterator<T, TReturn, TNext>
-type Demo003<T, TReturn, TNext> = Generator<T, TReturn, TNext>
+type Demo001<T> = Iterable<T>;
+type Demo002<T, TReturn, TNext> = Iterator<T, TReturn, TNext>;
+type Demo003<T, TReturn, TNext> = Generator<T, TReturn, TNext>;
 
 Symbol.iterator;
 
