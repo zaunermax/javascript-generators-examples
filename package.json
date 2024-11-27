@@ -1,15 +1,13 @@
 {
-  "name": "javascript-generators",
-  "module": "index.ts",
-  "type": "module",
-  "devDependencies": {
-    "@types/bun": "latest",
-    "prettier": "^3.2.5"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "rxjs": "^7.8.1"
-  }
+	"name": "javascript-generators",
+	"module": "index.ts",
+	"type": "module",
+	"devDependencies": {
+		"@types/bun": "latest",
+		"prettier": "^3.2.5",
+		"typescript": "^5.7.2"
+	},
+	"dependencies": {
+		"rxjs": "^7.8.1"
+	}
 }

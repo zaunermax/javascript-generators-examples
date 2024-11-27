@@ -1,4 +1,4 @@
-function* transform<T, R>(
+export function* transform<T, R>(
 	iterable: Iterable<T>,
 	transformFunc: (x: T) => R,
 ): Generator<R> {
